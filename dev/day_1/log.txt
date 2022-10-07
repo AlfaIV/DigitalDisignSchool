@@ -1,0 +1,39 @@
+TEST d { a b c d } sel 0 y z
+p01_mux_question.sv FAIL: a EXPECTED
+TEST d { a b c d } sel 0 y x
+p02_mux_if.sv FAIL: a EXPECTED
+TEST d { a b c d } sel 0 y x
+p03_mux_case.sv FAIL: a EXPECTED
+TEST d { a b c d } sel 0 y z
+p04_mux_index.sv FAIL: a EXPECTED
+TEST d { a b c d } sel 0 y z
+p05_mux_gates.sv FAIL: a EXPECTED
+TEST d { a b c d } sel 0 y z
+p06_mux_2n_using_muxes_n.sv FAIL: a EXPECTED
+TEST d { a b c d } sel 0 y z
+p07_mux_using_narrow_data_muxes.sv FAIL: a EXPECTED
+TEST ~ 0 = z
+p08_not_gate_using_mux.sv FAIL: 1 EXPECTED
+TEST 0 & 0 = z
+p09_and_gate_using_mux.sv FAIL: 0 EXPECTED
+TEST 0 | 0 = z
+p10_or_gate_using_mux.sv FAIL: 0 EXPECTED
+TEST 0 ^ 0 = z
+p11_xor_gate_using_mux.sv FAIL: 0 EXPECTED
+TEST  0 +  0 = 
+p12_signed_add_with_overflow.sv FAIL: overflow is z
+TEST  0 +  0 =  z
+p13_signed_add_with_saturation.sv FAIL:  0 EXPECTED
+TEST unsigned  0 *  0 =   z
+p14_signed_or_unsigned_mul.sv FAIL:   0 EXPECTED
+TEST 00100100 00100000 00100000 00100000 00100000 zzzzzzzz zzzzzzzz xxxxxxxx zzzzzzzz
+p15_four_ways_of_doing_shift.sv FAIL - see above
+p16_circular_shifts.sv:36: error: Unknown module type: circular_right_shift_of_N_by_S_using_bit_slices_and_concatenation
+p16_circular_shifts.sv:39: error: Unknown module type: circular_right_shift_of_N_by_S_by_ORing_the_results_of_shift_operations
+3 error(s) during elaboration.
+*** These modules were missing:
+        circular_right_shift_of_N_by_S_by_ORing_the_results_of_shift_operations referenced 1 times.
+        circular_right_shift_of_N_by_S_using_bit_slices_and_concatenation referenced 1 times.
+***
+TEST   36 00100100   4 00000100   z zzzzzzzz   x xxxxxxxx   z zzzzzzzz
+p17_arithmetic_shift_or_signed_divide_by_power_of_2.sv FAIL. EXPECTED    4 00000100

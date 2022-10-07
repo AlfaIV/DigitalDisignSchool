@@ -4,13 +4,21 @@
 #sudo apt-get upgrade
 #sudo apt-get install vim && git && tmux
 
-cd .
+cd ${HOME}
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-git config --global user.email "alfaiv@yandex.ru"
-git config --global user.name "Alfaiv"
+#git config --global user.email "alfaiv@yandex.ru"
+#git config --global user.name "Alfaiv"
 
 cp .vimrc ~/.vimrc 
 cp -r .ssh ~/.ssh
+
+
+
+#sudo docker run -it --mount type=bind,source=/home/alfa/Prog/HDL,target=/src expl:v0.1
+#sudo docker build -t expl:v0.1 .
+
+
+
